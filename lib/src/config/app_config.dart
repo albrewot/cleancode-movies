@@ -1,0 +1,4 @@
+abstract class AppConfig {
+  static String bearerKey =
+      "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhNDIyYzE2MjIxNDBmMGZiOWFjNGI0OGY1MjUwMDViNyIsInN1YiI6IjYwODYwOTc4NTVjOTI2MDAyYjc5ZmJjOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.7SCA2Hh-NgbRRTA7pKXLAGVSMAT17pzhHNudHVdb_fQ";
+}
