@@ -37,7 +37,7 @@ class _MoviesViewState extends State<MoviesView> {
   _body() {
     return BlocBuilder<MoviesBloc, MoviesState>(
       builder: (context, state) {
-        if (state is MoviesInitialState) {
+        if (state is MoviesInitialState || state is QueryingMoviesState) {
           return const Center(
             child: CupertinoActivityIndicator(),
           );

@@ -23,4 +23,14 @@ class MovieService {
       rethrow;
     }
   }
+
+  Future<Map<String, dynamic>> getMovieDetails(int id) async {
+    try {
+      var endpoirnt = "${MovieEndpoints.details}$id";
+      var response = await _apiClient.instance.get(endpoirnt);
+      return response.data;
+    } catch (error) {
+      rethrow;
+    }
+  }
 }

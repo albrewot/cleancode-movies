@@ -3,6 +3,7 @@ import 'package:movies_app/src/core/clients/api_client.dart';
 import 'package:movies_app/src/modules/movies/data/datasources/remote/movie_service.dart';
 import 'package:movies_app/src/modules/movies/data/repositories/movies_repository_impl.dart';
 import 'package:movies_app/src/modules/movies/domain/repositories/movies_repository.dart';
+import 'package:movies_app/src/modules/movies/domain/usecases/get_movie_details_usecase.dart';
 import 'package:movies_app/src/modules/movies/domain/usecases/get_popular_movies_usecase.dart';
 import 'package:movies_app/src/modules/movies/presentation/bloc/movies_bloc.dart';
 
@@ -42,11 +43,18 @@ _initializeUseCases() {
       injector.get(),
     ),
   );
+
+  injector.registerSingleton<GetMovieDetailsUseCase>(
+    GetMovieDetailsUseCase(
+      injector.get(),
+    ),
+  );
 }
 
 _initializeBlocs() {
   injector.registerFactory<MoviesBloc>(
     () => MoviesBloc(
+      injector.get(),
       injector.get(),
     ),
   );

@@ -20,3 +20,7 @@ class LoadMoviesEvent extends MoviesEvent {
 }
 
 class ErrorMoviesEvent extends MoviesEvent {}
+
+class SelectMovieEvent extends MoviesEvent {
+  const SelectMovieEvent(MovieModel movie) : super(payload: movie);
+}

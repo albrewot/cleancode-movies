@@ -16,4 +16,15 @@ class MoviesRepositoryImpl implements MoviesRepository {
       rethrow;
     }
   }
+
+  @override
+  Future<MovieModel> getMovieDetails(int id) async {
+    try {
+      var response = await _movieService.getMovieDetails(id);
+      var parsed = MovieModel.fromMap(response);
+      return parsed;
+    } catch (error) {
+      rethrow;
+    }
+  }
 }
